@@ -63,14 +63,13 @@ export const GlobalStyles = createGlobalStyle`
 
     @media ${breakpoints.desktopS}{
         :root{
-            --mh: calc(3.6rem / var(--divider));
-            --smh: calc(2rem / var(--divider));
+            --mh: calc(5.3rem / var(--divider));
+            --smh: calc(2.6rem / var(--divider));
             --t: calc(1.6rem / var(--divider));
             --bt: calc(2.3rem / var(--divider));
             --h: calc(3.3rem / var(--divider));
 
             --gap:6rem;
-            --side-p:14rem;
             --top-p:10rem;
         }
     }
@@ -82,6 +81,7 @@ export const GlobalStyles = createGlobalStyle`
             --h: calc(4rem / var(--divider));
             --t: calc(1.8rem / var(--divider));
             --bt: calc(2.5rem / var(--divider));
+            --divider:0.75;
        }
     }
 `;

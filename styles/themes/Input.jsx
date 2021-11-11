@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Button } from ".";
+import { breakpoints } from "..";
 
 export const Input = () => {
 	return (
@@ -21,6 +22,15 @@ const Form = styled.form`
 
 		&::placeholder {
 			color: #e0e0e0;
+
+			@media ${breakpoints.desktopX} {
+				font-size: 1.6rem;
+			}
+		}
+
+		@media ${breakpoints.desktopS} {
+			width: 100%;
+			max-width: 29.5rem;
 		}
 	}
 `;

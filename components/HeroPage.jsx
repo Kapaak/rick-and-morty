@@ -13,12 +13,12 @@ const HeroPage = () => {
 
 	return (
 		<HeroPageSection>
-			<Filler></Filler>
+			<Filler />
 			<Wrapper>
 				<ImageWrapper>
 					<img src="/main-image.jpg" alt="main image" />
 				</ImageWrapper>
-				<div>
+				<TextWrapper>
 					<HeadlineWrapper>
 						<h2>all characters from</h2>
 						<h1>Rick and Morty</h1>
@@ -42,17 +42,27 @@ const HeroPage = () => {
 							</ReturnWrapper>
 						</InputWrapper>
 					)}
-				</div>
+				</TextWrapper>
 			</Wrapper>
 		</HeroPageSection>
 	);
 };
+
+const TextWrapper = styled.div`
+	@media ${breakpoints.desktopX} {
+		flex: 0 1 29%;
+	}
+`;
 
 const ReturnWrapper = styled.div`
 	display: inline-flex;
 	padding: 1rem 0;
 	gap: 0.8rem;
 	color: var(--col7);
+
+	span {
+		cursor: pointer;
+	}
 `;
 
 const Filler = styled.div`
@@ -65,6 +75,18 @@ const Filler = styled.div`
 	background-color: var(--col2);
 	z-index: -1;
 	transform: translateX(550%) scale(18);
+
+	@media ${breakpoints.tabletS} {
+		transform: translateX(350%) scale(23);
+	}
+
+	@media ${breakpoints.desktopS} {
+		transform: translateX(318%) scale(25);
+	}
+
+	@media ${breakpoints.desktopX} {
+		transform: translateX(255%) scale(34);
+	}
 `;
 
 const Wrapper = styled.div`
@@ -128,6 +150,12 @@ const ImageWrapper = styled.div`
 
 	@media ${breakpoints.tabletS} {
 		height: 44rem;
+		max-width: 100%;
+		flex: 0 1 48%;
+	}
+
+	@media ${breakpoints.desktopX} {
+		height: 65rem;
 	}
 `;
 

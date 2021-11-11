@@ -10,6 +10,13 @@ export const Button = styled.button`
 	font-weight: 500;
 	font-size: var(--t);
 	font-family: inherit;
+	cursor: pointer;
+
+	&:hover {
+		transition: all 0.5s ease;
+		box-shadow: ${({ transparent }) =>
+			transparent ? "none" : "0 0 5px 1px #f5bc405e"};
+	}
 
 	a {
 		color: inherit;
