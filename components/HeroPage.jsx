@@ -6,7 +6,13 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
 //components
-import { breakpoints, Button, Input } from "../styles";
+import {
+	breakpoints,
+	Button,
+	Input,
+	MainHeadline,
+	MainSubheadline,
+} from "../styles";
 
 const HeroPage = () => {
 	const [searchActive, setSearchActive] = useState(false);
@@ -20,8 +26,8 @@ const HeroPage = () => {
 				</ImageWrapper>
 				<TextWrapper>
 					<HeadlineWrapper>
-						<h2>all characters from</h2>
-						<h1>Rick and Morty</h1>
+						<MainSubheadline>all characters from</MainSubheadline>
+						<MainHeadline>Rick and Morty</MainHeadline>
 					</HeadlineWrapper>
 					{!searchActive && (
 						<ButtonWrapper>
@@ -116,16 +122,7 @@ const HeroPageSection = styled.section`
 	height: 100vh;
 `;
 
-const HeadlineWrapper = styled.div`
-	h2 {
-		font-size: var(--smh);
-		color: var(--col5);
-		font-weight: 500;
-	}
-	h1 {
-		font-size: var(--mh);
-	}
-`;
+const HeadlineWrapper = styled.div``;
 
 const ButtonWrapper = styled.div`
 	display: flex;
