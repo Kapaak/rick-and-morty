@@ -4,3 +4,5 @@ export { Button } from "./themes";
 export { Input } from "./themes";
 export { MainHeadline } from "./themes";
 export { MainSubheadline } from "./themes";
+export { Section } from "./themes";
+export { Filler } from "./themes";

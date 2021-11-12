@@ -2,3 +2,5 @@ export { Button } from "./Button";
 export { Input } from "./Input";
 export { MainHeadline } from "./MainHeadline";
 export { MainSubheadline } from "./MainSubheadline";
+export { Section } from "./Section";
+export { Filler } from "./Filler";

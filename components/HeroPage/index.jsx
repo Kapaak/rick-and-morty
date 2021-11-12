@@ -14,7 +14,7 @@ import {
 	MainSubheadline,
 	Section,
 	Filler,
-} from "../styles";
+} from "../../styles";
 
 const HeroPage = () => {
 	const [searchActive, setSearchActive] = useState(false);
