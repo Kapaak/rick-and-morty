@@ -2,6 +2,7 @@ import styled from "styled-components";
 import useSWR from "swr";
 import { breakpoints } from "../../styles";
 import { fetcher } from "../../utils/index";
+import Link from "next/link";
 
 const CharactersList = ({ index, initialData }) => {
 	const { data, error } = useSWR(`/api/characters?page=${index}`, fetcher, {
@@ -11,10 +12,14 @@ const CharactersList = ({ index, initialData }) => {
 	return (
 		<CharactersListWrapper>
 			{data?.results?.map((e, i) => (
-				<ImageWrapper key={i}>
-					<img src={e.image} alt={e.name} />
-					<p>{e.name}</p>
-				</ImageWrapper>
+				<Link href={`/characters/${e.id}`}>
+					<a>
+						<ImageWrapper key={i}>
+							<img src={e.image} alt={e.name} />
+							<p>{e.name}</p>
+						</ImageWrapper>
+					</a>
+				</Link>
 			))}
 		</CharactersListWrapper>
 	);
@@ -52,6 +57,7 @@ const ImageWrapper = styled.div`
 		border-radius: 1.5rem 2rem 1rem 0;
 		font-weight: 600;
 		font-size: var(--t);
+		color: var(--col1);
 	}
 `;
 

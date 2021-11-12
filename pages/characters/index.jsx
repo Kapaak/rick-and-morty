@@ -19,7 +19,7 @@ const Characters = ({ response }) => {
 };
 
 export const getStaticProps = async pageContext => {
-	let query = await getData().catch(e => e.message);
+	const query = await getData().catch(e => e.message);
 
 	return {
 		props: { response: query },

@@ -6,6 +6,14 @@ export const getData = async page => {
 	return response;
 };
 
+export const getPersonData = async person => {
+	const data = await fetch(
+		`https://rickandmortyapi.com/api/character/${person}`
+	);
+	const response = await data.json();
+	return response;
+};
+
 export default async function handler(req, res) {
 	const { page } = req.query;
 	const data = await getData(page);
