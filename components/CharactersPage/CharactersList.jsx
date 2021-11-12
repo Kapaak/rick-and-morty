@@ -12,9 +12,9 @@ const CharactersList = ({ index, initialData }) => {
 	return (
 		<CharactersListWrapper>
 			{data?.results?.map((e, i) => (
-				<Link href={`/characters/${e.id}`}>
+				<Link href={`/characters/${e.id}`} key={i}>
 					<a>
-						<ImageWrapper key={i}>
+						<ImageWrapper>
 							<img src={e.image} alt={e.name} />
 							<p>{e.name}</p>
 						</ImageWrapper>
