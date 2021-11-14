@@ -14,6 +14,7 @@ import {
 	MainSubheadline,
 	Section,
 	Filler,
+	ReturnPrevious,
 } from "../../styles";
 
 const HeroPage = () => {
@@ -44,10 +45,7 @@ const HeroPage = () => {
 					{searchActive && (
 						<InputWrapper>
 							<Input />
-							<ReturnWrapper onClick={() => setSearchActive(false)}>
-								<FontAwesomeIcon icon={faArrowAltCircleLeft} />
-								<span>go back to previous selection</span>
-							</ReturnWrapper>
+							<ReturnPrevious onClick={() => setSearchActive(false)} />
 						</InputWrapper>
 					)}
 				</TextWrapper>
@@ -59,17 +57,6 @@ const HeroPage = () => {
 const TextWrapper = styled.div`
 	@media ${breakpoints.desktopX} {
 		flex: 0 1 29%;
-	}
-`;
-
-const ReturnWrapper = styled.div`
-	display: inline-flex;
-	padding: 1rem 0;
-	gap: 0.8rem;
-	color: var(--col7);
-
-	span {
-		cursor: pointer;
 	}
 `;
 
@@ -107,6 +94,7 @@ const ButtonWrapper = styled.div`
 const InputWrapper = styled.div``;
 
 const ImageWrapper = styled.div`
+	min-height: 30rem;
 	height: 30rem;
 	width: 100%;
 	border-radius: 1rem;

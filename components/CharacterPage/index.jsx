@@ -5,12 +5,15 @@ import {
 	Filler,
 	MainHeadline,
 	MainSubheadline,
+	ReturnPrevious,
 	Section,
 	Wrapper,
 } from "../../styles";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const CharacterPage = ({ data }) => {
+	const router = useRouter();
 	return (
 		<CharacterPageSection>
 			<Filler color="var(--col3)" />
@@ -41,6 +44,7 @@ const CharacterPage = ({ data }) => {
 							<h3>{data?.status}</h3>
 						</InformationItem>
 					</InformationWrapper>
+					<ReturnPrevious onClick={() => router.push("/characters")} />
 				</InnerWrapper>
 			</Wrapper>
 		</CharacterPageSection>
