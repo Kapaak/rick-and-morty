@@ -73,30 +73,6 @@ const ReturnWrapper = styled.div`
 	}
 `;
 
-// const Filler = styled.div`
-// 	position: absolute;
-// 	top: 50%;
-// 	right: 0;
-// 	width: 5rem;
-// 	height: 5rem;
-// 	border-radius: 50%;
-// 	background-color: var(--col2);
-// 	z-index: -1;
-// 	transform: translateX(550%) scale(18);
-
-// 	@media ${breakpoints.tabletS} {
-// 		transform: translateX(350%) scale(23);
-// 	}
-
-// 	@media ${breakpoints.desktopS} {
-// 		transform: translateX(318%) scale(25);
-// 	}
-
-// 	@media ${breakpoints.desktopX} {
-// 		transform: translateX(255%) scale(34);
-// 	}
-// `;
-
 const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -113,20 +89,14 @@ const Wrapper = styled.div`
 `;
 
 const HeroPageSection = styled(Section)`
+	display: flex;
+	align-items: end;
 	overflow: hidden;
-`;
 
-// const HeroPageSection = styled.section`
-// 	position: relative;
-// 	height: 100%;
-// 	max-width: var(--max-width);
-// 	padding: var(--side-p);
-// 	width: 100%;
-// 	max-width: 100%;
-// 	max-height: 100%;
-// 	overflow: hidden;
-// 	height: 100vh;
-// `;
+	@media ${breakpoints.tabletS} {
+		align-items: center;
+	}
+`;
 
 const HeadlineWrapper = styled.div``;
 

@@ -19,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
         --col5:#F5BB40;
         --col6:#FFFEFE;
         --col7:#828181;
+        --col8:#b6b5b5;
 
         --max-width:120rem;
         --side-p:2rem;

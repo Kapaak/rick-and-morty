@@ -6,3 +6,4 @@ export { MainHeadline } from "./themes";
 export { MainSubheadline } from "./themes";
 export { Section } from "./themes";
 export { Filler } from "./themes";
+export { Wrapper } from "./themes";

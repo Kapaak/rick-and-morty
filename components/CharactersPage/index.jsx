@@ -7,7 +7,13 @@ import Link from "next/link";
 import CharactersList from "./CharactersList";
 import PreloadNextCharacterList from "./PreloadCharactersList";
 //styles
-import { Filler, MainHeadline, MainSubheadline, Section } from "../../styles";
+import {
+	Filler,
+	MainHeadline,
+	MainSubheadline,
+	Section,
+	Wrapper,
+} from "../../styles";
 
 const CharactersPage = ({ initialData }) => {
 	const PAGE_COUNT = initialData.info.pages;
@@ -28,7 +34,7 @@ const CharactersPage = ({ initialData }) => {
 	};
 	return (
 		<CharactersPageSection>
-			<Wrapper>
+			<StyledWrapper>
 				<Filler />
 				<div>
 					<MainHeadline>All characters</MainHeadline>
@@ -43,7 +49,7 @@ const CharactersPage = ({ initialData }) => {
 					pageIndex={+router.query.page + 1}
 					initialData={initialData}
 				/>
-			</Wrapper>
+			</StyledWrapper>
 			<PaginationWrapper>
 				<ReactPaginate
 					breakLabel="..."
@@ -68,9 +74,7 @@ const StyledMainSubheadline = styled(MainSubheadline)`
 	}
 `;
 
-const CharactersPageSection = styled(Section)`
-	background-color: var(--col4);
-`;
+const CharactersPageSection = styled(Section)``;
 
 const PaginationWrapper = styled.div`
 	ul {
@@ -94,14 +98,9 @@ const PaginationWrapper = styled.div`
 	}
 `;
 
-const Wrapper = styled.div`
-	position: relative;
-	display: flex;
-	flex-direction: column;
+const StyledWrapper = styled(Wrapper)`
 	justify-content: flex-end;
-	gap: var(--gap);
 	padding-bottom: 2rem;
-	overflow: hidden;
 `;
 
 export default CharactersPage;

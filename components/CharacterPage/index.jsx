@@ -1,45 +1,53 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { MainHeadline, MainSubheadline, Section } from "../../styles";
+import {
+	breakpoints,
+	Filler,
+	MainHeadline,
+	MainSubheadline,
+	Section,
+	Wrapper,
+} from "../../styles";
 import Link from "next/link";
 
 const CharacterPage = ({ data }) => {
-	console.log(data, "da");
-
 	return (
 		<CharacterPageSection>
+			<Filler color="var(--col3)" />
 			<Wrapper>
-				<MainHeadline>{data?.name}</MainHeadline>
-				<StyledMainSubheadline>
-					<Link href="/">
-						<a>home</a>
-					</Link>
-				</StyledMainSubheadline>
-				<ImageWrapper>
-					<img src={data?.image} alt={data?.name} />
-				</ImageWrapper>
-				<InformationWrapper>
-					<InformationItem>
-						<h2>Planet</h2>
-						<h3>{data?.origin?.name}</h3>
-					</InformationItem>
-					<InformationItem>
-						<h2>Race</h2>
-						<h3>{data?.species}</h3>
-					</InformationItem>
-					<InformationItem>
-						<h2>Status</h2>
-						<h3>{data?.status}</h3>
-					</InformationItem>
-				</InformationWrapper>
+				<div>
+					<MainHeadline>{data?.name}</MainHeadline>
+					<StyledMainSubheadline>
+						<Link href="/">
+							<a>home</a>
+						</Link>
+					</StyledMainSubheadline>
+				</div>
+				<InnerWrapper>
+					<ImageWrapper>
+						<img src={data?.image} alt={data?.name} />
+					</ImageWrapper>
+					<InformationWrapper>
+						<InformationItem>
+							<h2>Planet</h2>
+							<h3>{data?.origin?.name}</h3>
+						</InformationItem>
+						<InformationItem>
+							<h2>Race</h2>
+							<h3>{data?.species}</h3>
+						</InformationItem>
+						<InformationItem>
+							<h2>Status</h2>
+							<h3>{data?.status}</h3>
+						</InformationItem>
+					</InformationWrapper>
+				</InnerWrapper>
 			</Wrapper>
 		</CharacterPageSection>
 	);
 };
 
 const CharacterPageSection = styled(Section)``;
-
-const Wrapper = styled.div``;
 
 const InformationWrapper = styled.div`
 	h2,
@@ -49,11 +57,24 @@ const InformationWrapper = styled.div`
 
 	h2 {
 		font-size: 3.5rem;
-		color: #b6b5b5;
+		color: var(--col8);
+		width: 12rem;
 	}
 
 	h3 {
 		font-size: 3rem;
+	}
+
+	@media ${breakpoints.desktopS} {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+`;
+
+const InnerWrapper = styled(Wrapper)`
+	@media ${breakpoints.desktopS} {
+		flex-direction: row;
 	}
 `;
 
@@ -68,13 +89,22 @@ const ImageWrapper = styled.div`
 	border-radius: 1rem;
 	overflow: hidden;
 	box-shadow: var(--shadow);
-	max-width: 50rem;
+	max-width: 36rem;
+
 	flex: 0 1 50%;
 
 	img {
 		object-fit: cover;
 		width: 100%;
 		height: 100%;
+	}
+
+	@media ${breakpoints.tabletS} {
+		max-width: 50rem;
+	}
+
+	@media ${breakpoints.desktopS} {
+		height: auto;
 	}
 `;
 

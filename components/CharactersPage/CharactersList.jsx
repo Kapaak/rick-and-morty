@@ -42,7 +42,7 @@ const ImageWrapper = styled.div`
 	overflow: hidden;
 	box-shadow: var(--shadow);
 	flex: 1 1 40%;
-	max-width: 28rem;
+	max-width: 15rem;
 
 	img {
 		width: 100%;
@@ -58,6 +58,28 @@ const ImageWrapper = styled.div`
 		font-weight: 600;
 		font-size: var(--t);
 		color: var(--col1);
+	}
+
+	@media ${breakpoints.tabletS} {
+		max-width: 20rem;
+	}
+
+	@media ${breakpoints.desktopS} {
+		p {
+			opacity: 0;
+			transition: all 0.5s ease-in-out;
+		}
+
+		&:hover {
+			p {
+				opacity: 1;
+				transition: all 0.3s ease-in-out;
+			}
+		}
+	}
+
+	@media ${breakpoints.desktopX} {
+		max-width: 28rem;
 	}
 `;
 
