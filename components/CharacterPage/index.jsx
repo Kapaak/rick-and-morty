@@ -30,26 +30,33 @@ const CharacterPage = ({ data }) => {
 					<ImageWrapper>
 						<img src={data?.image} alt={data?.name} />
 					</ImageWrapper>
-					<InformationWrapper>
-						<InformationItem>
-							<h2>Planet</h2>
-							<h3>{data?.origin?.name}</h3>
-						</InformationItem>
-						<InformationItem>
-							<h2>Race</h2>
-							<h3>{data?.species}</h3>
-						</InformationItem>
-						<InformationItem>
-							<h2>Status</h2>
-							<h3>{data?.status}</h3>
-						</InformationItem>
-					</InformationWrapper>
-					<ReturnPrevious onClick={() => router.push("/characters")} />
+					<TextContainer>
+						<InformationWrapper>
+							<InformationItem>
+								<h2>Planet</h2>
+								<h3>{data?.origin?.name}</h3>
+							</InformationItem>
+							<InformationItem>
+								<h2>Race</h2>
+								<h3>{data?.species}</h3>
+							</InformationItem>
+							<InformationItem>
+								<h2>Status</h2>
+								<h3>{data?.status}</h3>
+							</InformationItem>
+						</InformationWrapper>
+						<ReturnPrevious onClick={() => router.push("/characters")} />
+					</TextContainer>
 				</InnerWrapper>
 			</Wrapper>
 		</CharacterPageSection>
 	);
 };
+
+const TextContainer = styled(Wrapper)`
+	justify-content: center;
+	gap: 0;
+`;
 
 const CharacterPageSection = styled(Section)``;
 

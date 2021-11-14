@@ -16,6 +16,7 @@ const ReturnWrapper = styled.div`
 	padding: 1rem 0;
 	gap: 0.8rem;
 	color: var(--col7);
+	align-items: center;
 
 	span {
 		cursor: pointer;
