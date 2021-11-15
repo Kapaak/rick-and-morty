@@ -24,7 +24,6 @@ const CharactersPage = ({ initialData }) => {
 	// }, [pageIndex]);
 
 	// useEffect(() => {
-	// 	console.log(router.query.page);
 	// 	setPageIndex(+router.query.page);
 	// }, [router.query]);
 

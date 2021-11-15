@@ -2,10 +2,15 @@ import styled from "styled-components";
 import { Button } from ".";
 import { breakpoints } from "..";
 
-export const Input = () => {
+export const Input = ({ data }) => {
 	return (
 		<Form>
-			<input placeholder="type to search..." type="text" />
+			<input placeholder="type to search..." type="text" list="suggestions" />
+			<datalist id="suggestions">
+				{data.map((e, i) => (
+					<option key={i}>{e.name}</option>
+				))}
+			</datalist>
 			<InputButton type="submit">submit</InputButton>
 		</Form>
 	);

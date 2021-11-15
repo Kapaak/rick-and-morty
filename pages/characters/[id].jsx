@@ -7,7 +7,6 @@ const Character = ({ response }) => {
 };
 
 export const getStaticProps = async context => {
-	console.log(context.params.id, "par");
 	const query = await getPersonData(context.params.id).catch(e => e.message);
 
 	return {

@@ -17,7 +17,7 @@ import {
 } from "../../styles";
 
 const HeroPage = () => {
-	const [searchActive, setSearchActive] = useState(false);
+	// const [searchActive, setSearchActive] = useState(false);
 
 	return (
 		<Div100vh>
@@ -37,22 +37,22 @@ const HeroPage = () => {
 							<MainSubheadline>all characters from</MainSubheadline>
 							<MainHeadline>Rick and Morty</MainHeadline>
 						</HeadlineWrapper>
-						{!searchActive && (
-							<ButtonWrapper>
-								<Button onClick={() => setSearchActive(true)}>search</Button>
-								<Button transparent>
-									<Link href="/characters">
-										<a>see all of them</a>
-									</Link>
-								</Button>
-							</ButtonWrapper>
-						)}
-						{searchActive && (
+						{/*{!searchActive && (*/}
+						<ButtonWrapper>
+							{/* <Button onClick={() => setSearchActive(true)}>search</Button> */}
+							<Button>
+								<Link href="/characters">
+									<a>see all of them</a>
+								</Link>
+							</Button>
+						</ButtonWrapper>
+						{/*)}*/}
+						{/* {searchActive && (
 							<InputWrapper>
-								<Input />
+								<Input data={data} />
 								<ReturnPrevious onClick={() => setSearchActive(false)} />
 							</InputWrapper>
-						)}
+						)} */}
 					</TextWrapper>
 				</Wrapper>
 			</HeroPageSection>
