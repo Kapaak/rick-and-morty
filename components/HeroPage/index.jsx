@@ -20,41 +20,43 @@ const HeroPage = () => {
 	const [searchActive, setSearchActive] = useState(false);
 
 	return (
-		<HeroPageSection>
-			<Filler />
-			<Wrapper>
-				<ImageWrapper>
-					<Image
-						src={rickAndMorty}
-						alt="Rick and Morty main image"
-						placeholder="blur"
-						objectFit="cover"
-					/>
-				</ImageWrapper>
-				<TextWrapper>
-					<HeadlineWrapper>
-						<MainSubheadline>all characters from</MainSubheadline>
-						<MainHeadline>Rick and Morty</MainHeadline>
-					</HeadlineWrapper>
-					{!searchActive && (
-						<ButtonWrapper>
-							<Button onClick={() => setSearchActive(true)}>search</Button>
-							<Button transparent>
-								<Link href="/characters">
-									<a>see all of them</a>
-								</Link>
-							</Button>
-						</ButtonWrapper>
-					)}
-					{searchActive && (
-						<InputWrapper>
-							<Input />
-							<ReturnPrevious onClick={() => setSearchActive(false)} />
-						</InputWrapper>
-					)}
-				</TextWrapper>
-			</Wrapper>
-		</HeroPageSection>
+		<Div100vh>
+			<HeroPageSection>
+				<Filler />
+				<Wrapper>
+					<ImageWrapper>
+						<Image
+							src={rickAndMorty}
+							alt="Rick and Morty main image"
+							placeholder="blur"
+							objectFit="cover"
+						/>
+					</ImageWrapper>
+					<TextWrapper>
+						<HeadlineWrapper>
+							<MainSubheadline>all characters from</MainSubheadline>
+							<MainHeadline>Rick and Morty</MainHeadline>
+						</HeadlineWrapper>
+						{!searchActive && (
+							<ButtonWrapper>
+								<Button onClick={() => setSearchActive(true)}>search</Button>
+								<Button transparent>
+									<Link href="/characters">
+										<a>see all of them</a>
+									</Link>
+								</Button>
+							</ButtonWrapper>
+						)}
+						{searchActive && (
+							<InputWrapper>
+								<Input />
+								<ReturnPrevious onClick={() => setSearchActive(false)} />
+							</InputWrapper>
+						)}
+					</TextWrapper>
+				</Wrapper>
+			</HeroPageSection>
+		</Div100vh>
 	);
 };
 
@@ -83,6 +85,7 @@ const HeroPageSection = styled(Section)`
 	display: flex;
 	align-items: end;
 	overflow: hidden;
+	min-height: 100%;
 
 	@media ${breakpoints.tabletS} {
 		align-items: center;
