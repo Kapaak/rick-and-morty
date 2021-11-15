@@ -108,7 +108,7 @@ const ImageWrapper = styled.div`
 	flex: 0 1 50%;
 
 	& > span {
-		height: 100% !important;
+		height: 104% !important;
 		display: flex;
 	}
 
@@ -116,6 +116,12 @@ const ImageWrapper = styled.div`
 		height: 44rem;
 		max-width: 100%;
 		flex: 0 1 48%;
+	}
+
+	@media ${breakpoints.desktopS} {
+		& > span {
+			height: 100% !important;
+		}
 	}
 
 	@media ${breakpoints.desktopX} {
