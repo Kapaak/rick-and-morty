@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import styled from "styled-components";
 import useSWR from "swr";
 import { breakpoints } from "../../styles";
@@ -6,9 +7,14 @@ import Link from "next/link";
 import Image from "next/image";
 
 const CharactersList = ({ index, initialData }) => {
+	const mutableRef = useRef();
 	const { data, error } = useSWR(`/api/characters?page=${index}`, fetcher, {
-		initialData,
+		initialData: mutableRef.current ? mutableRef.current : initialData,
 	});
+
+	if (data !== undefined && mutableRef) {
+		mutableRef.current = data;
+	}
 
 	return (
 		<CharactersListWrapper>
