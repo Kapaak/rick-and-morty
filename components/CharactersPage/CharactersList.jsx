@@ -26,10 +26,6 @@ const CharactersList = ({ index, initialData }) => {
 							/>
 							<p>{e.name}</p>
 						</ImageWrapper>
-						{/* <ImageWrapper>
-							<img src={e.image} alt={e.name} />
-							<p>{e.name}</p>
-						</ImageWrapper> */}
 					</a>
 				</Link>
 			))}
@@ -55,10 +51,6 @@ const ImageWrapper = styled.div`
 	box-shadow: var(--shadow);
 	flex: 1 1 40%;
 	max-width: 15rem;
-
-	img {
-		width: 100%;
-	}
 
 	p {
 		position: absolute;

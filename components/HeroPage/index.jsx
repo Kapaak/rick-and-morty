@@ -109,6 +109,7 @@ const ImageWrapper = styled.div`
 
 	& > span {
 		height: 100% !important;
+		display: flex;
 	}
 
 	@media ${breakpoints.tabletS} {
