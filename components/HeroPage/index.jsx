@@ -104,15 +104,15 @@ const ImageWrapper = styled.div`
 	min-height: 30rem;
 	height: 30rem;
 	width: 100%;
-	border-radius: 1rem;
-	overflow: hidden;
-	box-shadow: var(--shadow);
+
 	max-width: 50rem;
 	flex: 0 1 50%;
 
 	& > span {
-		height: 104% !important;
+		height: 100% !important;
 		display: flex;
+		border-radius: 1rem;
+		box-shadow: var(--shadow);
 	}
 
 	@media ${breakpoints.tabletS} {
