@@ -3,6 +3,7 @@ import useSWR from "swr";
 import { breakpoints } from "../../styles";
 import { fetcher } from "../../utils/index";
 import Link from "next/link";
+import Image from "next/image";
 
 const CharactersList = ({ index, initialData }) => {
 	const { data, error } = useSWR(`/api/characters?page=${index}`, fetcher, {
@@ -15,9 +16,20 @@ const CharactersList = ({ index, initialData }) => {
 				<Link href={`/characters/${e.id}`} key={i}>
 					<a>
 						<ImageWrapper>
-							<img src={e.image} alt={e.name} />
+							<Image
+								src={e.image}
+								alt={e.name}
+								height="300"
+								width="300"
+								placeholder="blur"
+								blurDataURL="/main-image.jpg"
+							/>
 							<p>{e.name}</p>
 						</ImageWrapper>
+						{/* <ImageWrapper>
+							<img src={e.image} alt={e.name} />
+							<p>{e.name}</p>
+						</ImageWrapper> */}
 					</a>
 				</Link>
 			))}

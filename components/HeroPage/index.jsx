@@ -3,8 +3,7 @@ import Div100vh from "react-div-100vh";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import rickAndMorty from "../../public/main-image.jpg";
 //components
 import {
 	breakpoints,
@@ -25,7 +24,12 @@ const HeroPage = () => {
 			<Filler />
 			<Wrapper>
 				<ImageWrapper>
-					<img src="/main-image.jpg" alt="main image" />
+					<Image
+						src={rickAndMorty}
+						alt="Rick and Morty main image"
+						placeholder="blur"
+						objectFit="cover"
+					/>
 				</ImageWrapper>
 				<TextWrapper>
 					<HeadlineWrapper>
@@ -103,10 +107,8 @@ const ImageWrapper = styled.div`
 	max-width: 50rem;
 	flex: 0 1 50%;
 
-	img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
+	& > span {
+		height: 100% !important;
 	}
 
 	@media ${breakpoints.tabletS} {
